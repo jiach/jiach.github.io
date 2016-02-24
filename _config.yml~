@@ -1,0 +1,23 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Statistical Computing
+email: cheng.jia@outlook.com
+description: > # this means to ignore newlines until "baseurl:"
+  I am a Ph.D. student in Biostatistics in the Perelman School of Medicine
+  at University of Pennsylvania, well trained in both frequentist
+  and Bayesian theories of statistics. I am extremely 
+  passionate about statistical computing. Everything from openMP, MPI, CUDA, 
+  openCL, to Hadoop, Spark. Let's crunch some numbers! 
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://jiach.github.io" # the base hostname & protocol for your site
+twitter_username: treadwelliii
+github_username:  jiach
+
+# Build settings
+markdown: rogue
