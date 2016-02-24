@@ -65,7 +65,7 @@ by right clicking scala, and choose New-Scala Class. Now change the Kind to "Obj
 	```
 8. Now right click the object you have created in the Project View on the left-hand side, and click Run 'ObjectName' to run your code! 
 
-No installation was needed and now you have a local Scala IDE that can run and test Apache Spark code. Here's the result of the above code:
+No installation is needed and now you have a local Scala IDE that can run and test Apache Spark code. Here's the result of the above code:
 
 	```
 	root
