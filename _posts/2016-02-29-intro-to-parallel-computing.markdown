@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "A Talk on Parallel Computing to the Biostatisticians"
-date:   2016-02-23 16:42:33 -0500
+date:   2016-02-29 18:36:18 -0500
 categories: talk
 ---
 
