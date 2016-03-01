@@ -3,7 +3,6 @@ layout: post
 title:  "How to set up Apache Spark with IntelliJ Idea 15"
 date:   2016-02-23 16:42:33 -0500
 categories: spark
-comments: true
 ---
 
 [Apache Spark](http://spark.apache.org/) is programmed in [Scala](http://www.scala-lang.org/), 
