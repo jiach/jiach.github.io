@@ -286,7 +286,7 @@ If you ever need to write some parallel R code, just copy and paste the above
 code and replace the body of the foreach function with the computations
 of your choosing. Make sure to set up `.combine` and `.packages` parameters
 correctly. One thing to keep in mind is that "... R (and before it, S)
- internals are single-threaded, and will almost surely remain single-threaded.".
+ internals are single-threaded, and will almost surely remain single-threaded".
 This quote by Dirk Eddelbuettel, a major Rcpp contributor, should be remembered
 by all statisticians. If you want truly parallel computing without the kinks of R, 
 maybe it's time to learn C/C++ or Java.
