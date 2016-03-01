@@ -8,14 +8,14 @@ categories: talk
 So I was asked to give a small introductory talk on parallel computing 
 technologies to a few biostatisticians enrolled in BSTA 787 at 
 University of Pennsylvania. [Here](https://penno365-my.sharepoint.com/personal/jiacheng_upenn_edu/_layouts/15/guestaccess.aspx?guestaccesstoken=imk6OhLxPqy3%2fnrySPNOzEMp%2fWOHN5RNpWiz7djjnh8%3d&docid=08f456f8f4e4f461ba0d05e53309b9240) is the slides I used for this talk. 
-I used several pieces of code as an example to showcase different 
+I used several pieces of code to showcase different 
 parallel computing technologies, openMP, openMPI and Apache Spark. The code
 is also published here on this page.
 Some of the slides were borrowed from the lecture notes of CIS 505 by Dr. 
 Boon Thau Loo, a class I thoroughly enjoyed and would recommend to anyone.
 Some of the concepts in the talk will be egregiously inaccurate (or even wrong)
- in order to make them approachable/understandable for those who do not
- have a solid CS background.
+in order to make them approachable/understandable for those who do not
+have a solid CS background.
  
 
 The following Java code was used to showcase the interweaving of execution 
