@@ -218,7 +218,8 @@ question 1, and some **really important** guidelines for question 2.
    or raw "sockets". They should in theory work in all operating systems, and 
    across different nodes on a computing cluster, if PVM or MPI is available.
    doMPI is a relatively new package using the Rmpi interface for parallelization
-   with MPI. I am not particularly sure about the differences of Rmpi and the MPI implementation in doSNOW.
+   with MPI. I am not particularly sure about the differences between doMPI and doSNOW 
+   when it comes to MPI, since both use Rmpi as their back end.
    The rule of thumb is, **if you want to work under Windows, use doParallel.
    If you want to work on a computing cluster, use doMPI.
    If you want to work on a *NIX machine (Mac, Linux, FreeBSD), use doMC.**
@@ -234,6 +235,57 @@ question 1, and some **really important** guidelines for question 2.
    What should be done is this, whenever you write a function in a package that
    may require parallel computing, **ask the user for the number of cores to use, set
    the default n.cores = 1, and do your best to honor the n.cores parameter.**
+
+The following code was used to showcase the doParallel/doMPI package and foreach pacakge.
+
+{% highlight R %}
+library(doParallel)
+
+# create the dataset
+data <- seq(-10,10,length.out = 1000)
+
+# initialize the cluster environment
+cl <- makeCluster(4)
+registerDoParallel(cl)
+
+# perform the computation, notice the .combine option and .packages option. 
+# .combine tells foreach how to combine the results. In this case it's c().
+# .packages tells foreach what packages are used in the parenthesized code. 
+results <- foreach(i=data, .combine = c, .packages = c('boot')) %dopar% {
+  inv.logit(i)
+}
+
+# stop the cluster
+stopCluster(cl)
+
+# plot the results
+plot(data,results,type='l',xlab='X',ylab='Y')
+
+{% endhighlight %}
+
+Similar code can be used for doMPI and foreach.
+{% highlight R %}
+data <- seq(-10,10,length.out = 1000)
+
+library(doMPI)
+library(foreach)
+
+cl <- startMPIcluster(count = 4)
+registerDoMPI(cl)
+
+results <- foreach(i=data, .combine = c, .packages = c('boot')) %dopar% {
+  inv.logit(i)
+}
+
+closeCluster(cl)
+
+plot(data,results,type='l',xlab='X',ylab='Y')
+{% endhighlight %}
+
+If you every need to write some parallel R code, just copy and paste the above
+code and replace the body of the foreach function with the computations
+of your choosing. Make sure to set up `.combine` and `.packages` parameters
+correctly.
 
 The following code was used to showcase the Apache Spark functions.
 
@@ -263,3 +315,5 @@ object summaryStatistics {
   }
 }
 {% endhighlight %}
+
+How to set up an IDE for Spark development and the link to download the yelp review data can be found in [this post]({% post_url 2016-02-23-how-to-setup-intellij-for-spark%})
