@@ -3,6 +3,7 @@ layout: post
 title:  "A Talk on Parallel Computing to the Biostatisticians"
 date:   2016-02-29 18:36:18 -0500
 categories: talk
+comments: true
 ---
 
 So I was asked to give a small introductory talk on parallel computing 
