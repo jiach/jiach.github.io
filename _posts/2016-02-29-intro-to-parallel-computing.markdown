@@ -282,7 +282,7 @@ closeCluster(cl)
 plot(data,results,type='l',xlab='X',ylab='Y')
 {% endhighlight %}
 
-If you every need to write some parallel R code, just copy and paste the above
+If you ever need to write some parallel R code, just copy and paste the above
 code and replace the body of the foreach function with the computations
 of your choosing. Make sure to set up `.combine` and `.packages` parameters
 correctly.
