@@ -6,8 +6,8 @@ categories: talk
 ---
 
 So I was asked to give a small introductory talk on parallel computing 
-technologies to a few biostatisticians enrolled in BSTA 787 in 
-University of Pennsylvania. Here is the slides I used for this talk. 
+technologies to a few biostatisticians enrolled in BSTA 787 at 
+University of Pennsylvania. [Here](https://penno365-my.sharepoint.com/personal/jiacheng_upenn_edu/_layouts/15/guestaccess.aspx?guestaccesstoken=imk6OhLxPqy3%2fnrySPNOzEMp%2fWOHN5RNpWiz7djjnh8%3d&docid=08f456f8f4e4f461ba0d05e53309b9240) is the slides I used for this talk. 
 I used several pieces of code as an example to showcase different 
 parallel computing technologies, openMP, openMPI and Apache Spark. The code
 is also published here on this page.
