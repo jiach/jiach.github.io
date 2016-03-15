@@ -61,6 +61,7 @@ When producing a nice ggplot2 graph, the following pointers might be useful:
     - To change the axis text, use `+xlab()` and `+ylab()`
     - To change the axis limits, use `+xlim(lower,upper)` and `+ylim()`
 
+
 - **cairo_pdf** is a function provided with base R to write the graphs to a PDF device. The advantage of using cairo_pdf is that you can specify font families that do not belong to the default family. In our example, we used [GT Walsheim](https://www.grillitype.com/typefaces/gt-walsheim) as the default type face.
 
 - **RColorBrewer** is a great package for generating color palettes that are aesthetically pleasing. It only takes a little effort to spruce up our graphs with some elegant and legible colors, but the end result is totally worth the couple of lines of extra code.
