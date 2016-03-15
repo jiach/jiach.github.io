@@ -64,7 +64,7 @@ When producing a nice ggplot2 graph, the following pointers might be useful:
 
 - **cairo_pdf** is a function provided with base R to write the graphs to a PDF device. The advantage of using cairo_pdf is that you can specify font families that do not belong to the default family. In our example, we used [GT Walsheim](https://www.grillitype.com/typefaces/gt-walsheim) as the default type face.
 
-- **RColorBrewer** is a great package for generating color palettes that are aesthetically pleasing. It only takes a little effort to spruce up our graphs with some elegant and legible colors, but the end result is totally worth the couple of lines of extra code.
+- **RColorBrewer** is a great package for generating color palettes that are aesthetically pleasing. It only takes a little effort to spruce up our graphs with some elegant and legible colors, so the end result is totally worth the couple of lines of extra code.
 
 Another great feature of ggplot2 is that it can generate graphs for different groups of data automatically. Now consider we have the following data.frame in R.
 
