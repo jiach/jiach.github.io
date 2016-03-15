@@ -136,6 +136,7 @@ dev.off()
 
 
 The last piece of note is about sharing legend. Sometimes you are making several different figures using the same groups, i.e., you only need one set of legends. In this case, you can either
+
 - hide the legends in all panels but one, or
 - extract the legends and place it outside.
 
