@@ -5,8 +5,8 @@ date:   2016-02-23 16:42:33 -0500
 categories: spark
 ---
 
-[Apache Spark](http://spark.apache.org/) is programmed in [Scala](http://www.scala-lang.org/), 
-a JVM-based language that dramatically simplifies the parsing and processing of 
+[Apache Spark](http://spark.apache.org/) is programmed in [Scala](http://www.scala-lang.org/),
+a JVM-based language that dramatically simplifies the parsing and processing of
 large-scale data across nodes in Hadoop clusters. It is relatively new, and provides no official IDEs.
 
 [IntelliJ Idea](https://www.jetbrains.com/idea/) is one of the best IDEs out there for Java/JVM-based languages. It has robust
@@ -14,21 +14,28 @@ support for Scala with its Scala plugins, which at the time of this post has bee
 for almost 4 million times. In this post, I will show how to set up a developmental environment
 for Apache Spark with IntelliJ Idea 15, and it's as easy as 1-2-3.
 
-1.	First you need to acquire [IntelliJ Idea](https://www.jetbrains.com/idea/). It has a free-of-charge community version, as well as 
+1.	First you need to acquire [IntelliJ Idea](https://www.jetbrains.com/idea/). It has a free-of-charge community version, as well as
 a paid profession version. Both will work just fine for our purposes. This step requires Internet connection.
 
-2.	Now let's install the Scala plugin. Open File-Settings-Plugins-Browse Respositories, and search for "Scala"
+2.	Now let's install Scala.
+   Depending on your platform, Scala can be acquired either through a package manager,
+	 ```bash
+	 sudo apt-get install scala-library scala
+	 ```
+	 or download and install from the [Scala binary](http://www.scala-lang.org/download/).
+
+3.  The next step would be installing the Scala plugin for IntelliJ IDEA. Open File-Settings-Plugins-Browse Respositories, and search for "Scala"
 ![IntelliJ Settings]({{ post.url }}/assets/plugins-settings-intellij.png)
 ![Scala Plugins]({{ post.url }}/assets/scala-plugin-intellij.png)
 Click the green "Install" button on the right-hand side of the Browse Responsitories window, and the plugin and all its dependencies will be
 installed automatically. This step requires Internet connection.
 
-3.	The SBT plug-in should be installed already at this point. If not, install it manually with the above steps. This step requires Internet connection.
+4.	Install the SBT plugin with the above steps. This step requires Internet connection.
 
-4.	Now let's start a new project with SBT. Open File-New-Project, choose Scala and SBT project as the following screenshot shows. Follow the wizard to create a new SBT-based Scala project.
+5.	Now let's start a new project with SBT. Open File-New-Project, choose Scala and SBT project as the following screenshot shows. Follow the wizard to create a new SBT-based Scala project.
 ![Scala Plugins]({{ post.url }}/assets/new-sbt.png)
 
-5.	Now let's configure this project to use Apache Spark. Copy and paste the following code in your build.sbt file. 
+6.	Now let's configure this project to use Apache Spark. Copy and paste the following code in your build.sbt file.
 Wait patiently for SBT to automatically resolve all the dependencies and acquire the necessary packages remotely. This step requires Internet connection and it could take a while.
 
 	```
@@ -37,11 +44,11 @@ Wait patiently for SBT to automatically resolve all the dependencies and acquire
 	libraryDependencies += "org.apache.spark" % "spark-mllib_2.11" % "1.6.0"
 	```
 
-6.	You should be able to use Apache Spark immediately afterwards. Now let's create an Scala object to run some code! In the Project View on the left hand side, find src/main/scala, and create a new Scala class
-by right clicking scala, and choose New-Scala Class. Now change the Kind to "Object" and pick a name for your Scala object. 
+7.	You should be able to use Apache Spark immediately afterwards. Now let's create an Scala object to run some code! In the Project View on the left hand side, find src/main/scala, and create a new Scala class
+by right clicking scala, and choose New-Scala Class. Now change the Kind to "Object" and pick a name for your Scala object.
 ![New Scala Obj]({{ post.url }}/assets/new-scala-obj.png)
 
-7.	Import the appropriate classes for Scala and you are good to go! I attached the code I used to look at the Yelp challenge data at the end of this tutorial. The dataset can be downloaded at 
+8.	Import the appropriate classes for Scala and you are good to go! I attached the code I used to look at the Yelp challenge data at the end of this tutorial. The dataset can be downloaded at
 [Yelp Dataset Challenge](https://www.yelp.com/dataset_challenge).
 
 	``` scala
@@ -63,7 +70,7 @@ by right clicking scala, and choose New-Scala Class. Now change the Kind to "Obj
 	  }
 	}
 	```
-8. Now right click the object you have created in the Project View on the left-hand side, and click Run 'ObjectName' to run your code! 
+9. Now right click the object you have created in the Project View on the left-hand side, and click Run 'ObjectName' to run your code!
 
 No installation is needed and now you have a local Scala IDE that can run and test Apache Spark code. Here's the result of the above code:
 
