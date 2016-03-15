@@ -110,8 +110,7 @@ cairo_pdf('ggplot2_tutorial_2.pdf',width = 9,height = 3, onefile = T,family = 'G
 grid.arrange(grob1,grob2,grob3,nrow=1)
 dev.off()
 {% endhighlight %}
-
-The end result shows legend inside the plotting area and the title of the legend centered. ![ggplot2_tutorial_2]({{ post.url }}/assets/ggplot2_tutorial_2.png)
+ggplot2 is nice in that it automatically draws two lines for you according to the variable name you passed to it, and generates legends automatically too. However, its legend is placed outside the graphing area (grey)， a choice that usually has a lot of graphing area wasted and renders the final result cumbersome and unattractive. Moreover, the title of the legend is left-justified, which drives a person with slight OCD like me crazy. We changed all that, and the end result shows legend inside the plotting area and the title of the legend centered. ![ggplot2_tutorial_2]({{ post.url }}/assets/ggplot2_tutorial_2.png)
 
 -  ggplot2 automatically plots two groups using different "lty", "color" and "shape", defined in the `geom_line` and `geom_point` commands used above. The custom Brewer color scheme is passed to ggplot2 with the `scale_color_manual` command. `aes` is short for aesthetics, as it is used for generating aesthetics mapping for ggplot2. In our example,
   - the information about the variables used for x and y axes are passed to ggplot using aes;
