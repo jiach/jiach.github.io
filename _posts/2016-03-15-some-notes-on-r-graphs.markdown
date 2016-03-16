@@ -28,13 +28,14 @@ ggplot2 is a boon to any R user who is attempting to produce high quality figure
 
 {% highlight R %}
 # generate data
-x <- seq(0,30,length.out = 10); y <- 5-0.1713*y^2+8.3056*y+rnorm(10,sd = 5)
+x <- seq(0,30,length.out = 10); y <- 5+0.0713*x^2+2.3056*x+rnorm(10,sd = 5)
 
 # load libraries
 library(ggplot2); library(RColorBrewer); library(gridExtra)
 
 # generate color scheme
 color.scheme <- brewer.pal(3,'Accent')
+
 
 # draw line graph
 grob1 <- ggplot(data.frame(x=x,y=y))+geom_line(aes(x=x,y=y),color=color.scheme[1],lty=2)+ggtitle("Line Graph Only")
@@ -43,7 +44,7 @@ grob1 <- ggplot(data.frame(x=x,y=y))+geom_line(aes(x=x,y=y),color=color.scheme[1
 grob2 <- grob1 + geom_point(aes(x=x,y=y),color=color.scheme[2])+ggtitle("With Points")
 
 # change theme
-grob3 <- grob2 + theme_minimal()+ggtitle("Minimal Theme")+xlab('Cheng's Age')+ylab('Cheng's Weight)
+grob3 <- grob2 + theme_minimal()+ggtitle("Minimal Theme")+xlab("Age [year]")+ylab("Weight [kg]")+scale_x_continuous(breaks=c(0,10,20,30))+scale_y_continuous(breaks = c(0,50,100))
 
 # save to pdf
 cairo_pdf('ggplot2_tutorial_1.pdf',width = 9,height = 3, onefile = T,family = 'GT Walsheim Pro Trial Regular')
